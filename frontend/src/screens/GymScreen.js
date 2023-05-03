@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import defineComponent from '../components/AdafruitIO';
 import API from '../api/api';
+import Icon from 'react-native-vector-icons/AntDesign'
 
 import {
     SafeAreaView,
@@ -12,7 +13,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-export function GymScreen({ navigation }) {
+export function GymScreen() {
     const [moisure, setMoisure] = useState('0.0');
     const [temp, setTemp] = useState('0.0');
     const [movement, setMovement] = useState('0');
@@ -21,7 +22,14 @@ export function GymScreen({ navigation }) {
 
     const lightHandler = () => {
         const value = (light == "A") ? "B" : "A"
-        response = API.postKey("turnonlight", value)
+        API.postKey("turnonlight", value)
+    }
+
+    const fanHandler = (value) => {
+        result = value + fan
+        if (result < 0 || result > 3)
+            return
+        API.postKey("setup-fan", result)
     }
 
     useEffect(() => {
@@ -61,7 +69,7 @@ export function GymScreen({ navigation }) {
                 .catch(error => {
                     console.log(error);
                 });
-        }, 5000)
+        }, 10000)
     }, []);
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#EFFEFF" }}>
@@ -108,9 +116,17 @@ export function GymScreen({ navigation }) {
                         <Text style={styles.textStyle1}>
                             Fan
                         </Text>
-                        <Text style={styles.textStyle1}>
-                            {fan}
-                        </Text>
+                        <View style={styles.textRow}>
+                            <TouchableOpacity onPress={() => { fanHandler(-1) }}>
+                                <Icon name="caretleft" style={styles.iconStyle} />
+                            </TouchableOpacity>
+                            <Text style={styles.textStyle1}>
+                                {fan}
+                            </Text>
+                            <TouchableOpacity onPress={() => { fanHandler(1) }}>
+                                <Icon name="caretright" style={styles.iconStyle} />
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
                 <View style={[styles.textRow, { margin: 2 }]}>
@@ -204,6 +220,7 @@ const styles = StyleSheet.create({
         flex: 2,
         flexDirection: 'row',
         margin: 10,
+        alignItems: 'center',
     },
     textStyle1: {
         flex: 1,
@@ -220,5 +237,11 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         margin: 10,
+    },
+    iconStyle: {
+        fontSize: 30,
+        // marginTop: 10,
+        marginBottom: 10,
+        color: 'black',
     },
 });
