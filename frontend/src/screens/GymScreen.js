@@ -18,7 +18,7 @@ export function GymScreen ()  {
     const [temp, setTemp] = useState('0.0');
     const [movement, setMovement] = useState('0');
     const [light, setLight] = useState("B");
-    const [fan, setFan] = useState<number>(0);
+    const [fan, setFan] = useState(0);
 
     const lightHandler = () => {
         const value = (light == "A") ? "B" : "A"
@@ -36,6 +36,7 @@ export function GymScreen ()  {
         setInterval(async () => {
             await axios.get('https://io.adafruit.com/api/v2/DangLe1311/feeds/sensor-moist')
                 .then((response) => {
+                    console.log("hi")
                     setMoisure(response.data.last_value);
                 })
                 .catch(error => {

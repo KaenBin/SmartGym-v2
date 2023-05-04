@@ -32,7 +32,9 @@ import {
   ExerciseDetail,
   CounterApp,
   Levels,
-  Beginner
+  Beginner,
+  Amateur,
+  Professional
 } from './src/index';
 
 import { AuthContext } from './src/screens/utils';
@@ -377,6 +379,29 @@ export default function App() {
                 headerTitle: 'BEGINNER PHASE',
                 headerTitleAlign: 'center',
               }}
+              initialParams={{ userToken: state.userToken }}
+            />
+            <Stack.Screen
+              name="Amateur"
+              component={Amateur}
+              options={{
+                headerStyle: { backgroundColor: '#2F486D',},
+                headerTintColor: 'white',
+                headerTitle: 'BEGINNER PHASE',
+                headerTitleAlign: 'center',
+              }}
+              initialParams={{ userToken: state.userToken }}
+            />
+            <Stack.Screen
+              name="Professional"
+              component={Professional}
+              options={{
+                headerStyle: { backgroundColor: '#2F486D',},
+                headerTintColor: 'white',
+                headerTitle: 'BEGINNER PHASE',
+                headerTitleAlign: 'center',
+              }}
+              initialParams={{ userToken: state.userToken }}
             />
             </Stack.Navigator>
             <StatusBar/>

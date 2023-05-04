@@ -15,7 +15,7 @@ import {
 
 import API from '../../api/api'
 
-export function Professional({ route, navigation }) {
+export function Amateur({ route, navigation }) {
     const lst = [
         "dumbbell tricep extension",
         "bench press",
