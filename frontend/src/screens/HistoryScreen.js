@@ -21,6 +21,7 @@ const CalendarTheme = {
   monthTextColor: 'white',
   textDisabledColor: 'gray',
   todayTextColor: 'white',
+  
 }
 
 export function HistoryScreen({ navigation }) {

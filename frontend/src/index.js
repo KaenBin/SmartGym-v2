@@ -18,3 +18,5 @@ export * from './screens/Exercises/Abs/Abs'
 export * from './screens/Exercises/FullBody/FullBody'
 export * from './components/ExerciseDetail';
 export * from './screens/Exercises/CounterApp';
+export * from './screens/LevelScreen';
+export * from './screens/Levels/Beginner'

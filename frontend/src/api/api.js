@@ -41,10 +41,9 @@ const postKey = async (name, value) => {
             "value": value
         }
     }
-    console.log(name)
     const headers = {
         "Content-Type": "application/json",
-        "X-AIO-Key": "aio_nNqp585pUs2SLc8qwCw5dZmzVwi2"
+        "X-AIO-Key": "aio_QDVY74M5AXzisVZ2cD47qbACNhkm"
     }
 
     try {

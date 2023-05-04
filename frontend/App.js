@@ -31,6 +31,8 @@ import {
   FullBody,
   ExerciseDetail,
   CounterApp,
+  Levels,
+  Beginner
 } from './src/index';
 
 import { AuthContext } from './src/screens/utils';
@@ -63,7 +65,7 @@ function Exercises({ route }) {
         options={{
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
-          headerTitle: 'Choose the muscle groups',
+          headerTitle: 'CHOOSE THE MUSCLE GROUP',
           headerTitleAlign: 'center',
           headerTitleStyle: { fontWeight: '100', fontSize: 20, }
         }}
@@ -74,7 +76,7 @@ function Exercises({ route }) {
         options={{
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
-          headerTitle: 'Time Counter',
+          headerTitle: 'TIME COUNTER',
           headerTitleAlign: 'center',
           headerTitleStyle: { fontWeight: '100', fontSize: 20, }
         }}
@@ -312,7 +314,7 @@ export default function App() {
                   />
                 </>
               ) : (
-                // User is signed in
+                // User has signed in
                 <Stack.Screen
                   name="HomeScreen"
                   component={HomeScreen}
@@ -321,7 +323,6 @@ export default function App() {
               )}
 
               <Stack.Screen
-
               name="HistoryScreen"
               component={HistoryScreen}
               options={{
@@ -354,6 +355,26 @@ export default function App() {
                 headerStyle: { backgroundColor: '#2F486D',},
                 headerTintColor: 'white',
                 headerTitle: 'PERSONAL INFORMATION',
+                headerTitleAlign: 'center',
+              }}
+            />
+            <Stack.Screen
+              name="LevelScreen"
+              component={Levels}
+              options={{
+                headerStyle: { backgroundColor: '#2F486D',},
+                headerTintColor: 'white',
+                headerTitle: 'LEVELS OF TRAINING',
+                headerTitleAlign: 'center',
+              }}
+            />
+            <Stack.Screen
+              name="Beginner"
+              component={Beginner}
+              options={{
+                headerStyle: { backgroundColor: '#2F486D',},
+                headerTintColor: 'white',
+                headerTitle: 'BEGINNER PHASE',
                 headerTitleAlign: 'center',
               }}
             />

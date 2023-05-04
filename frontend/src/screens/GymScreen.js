@@ -13,12 +13,12 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-export function GymScreen() {
+export function GymScreen ()  {
     const [moisure, setMoisure] = useState('0.0');
     const [temp, setTemp] = useState('0.0');
     const [movement, setMovement] = useState('0');
     const [light, setLight] = useState("B");
-    const [fan, setFan] = useState(0);
+    const [fan, setFan] = useState<number>(0);
 
     const lightHandler = () => {
         const value = (light == "A") ? "B" : "A"
@@ -69,8 +69,9 @@ export function GymScreen() {
                 .catch(error => {
                     console.log(error);
                 });
-        }, 10000)
+        }, 5000)
     }, []);
+
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#EFFEFF" }}>
             <ScrollView contentContainerStyle={styles.container}>
@@ -188,6 +189,7 @@ export function GymScreen() {
         </SafeAreaView>
     );
 };
+
 
 const styles = StyleSheet.create({
     container: {

@@ -125,7 +125,7 @@ export function HomeScreen({ navigation }) {
               <Text style={styles.textStyle}>History</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.opcaityStyle}>
+          <TouchableOpacity style={styles.opcaityStyle} onPress={() => navigation.push('LevelScreen')}>
             <Icon1 name="dumbbell" style={styles.iconStyle} />
             <View style={styles.textBox}>
               <Text style={styles.textStyle}>Levels of</Text>
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
   textBox: {
     height: '30%',
     width: 100,
-    backgroundColor: '#ECECEC',
+    backgroundColor: '#DCDCDC',
     borderRadius: 20,
     alignItems: 'center',
     color: 'black',
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
   },
   textHCMUT: {
     alignSelf: 'center',
-    color: '#1976D2',
+    color: '#2F486D',
   },
   textInputStyle: {
     height: 40,
@@ -246,6 +246,7 @@ const styles = StyleSheet.create({
   textStyle: {
     fontWeight: 'bold',
     fontSize: 12,
+    // color: '#555555'
     // textAlign: 'center',
     // justifyContent: 'center',
   },
