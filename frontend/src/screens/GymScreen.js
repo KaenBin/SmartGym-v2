@@ -36,7 +36,6 @@ const GymScreen = () =>  {
         const myInterval = setInterval(async () => {
             await axios.get('https://io.adafruit.com/api/v2/DangLe1311/feeds/sensor-moist')
                 .then((response) => {
-                    console.log("hi")
                     setMoisure(response.data.last_value);
                 })
                 .catch(error => {
