@@ -11,14 +11,13 @@ import * as SecureStore from 'expo-secure-store';
 import client from './src/api/client'
 import axios from 'axios';
 
-import { 
-  SignInScreen, 
-  SignUpScreen, 
-  SplashScreen, 
-  HomeScreen, 
-  HistoryScreen, 
-  ExercisesScreen, 
-  GymScreen,
+import {
+  SignInScreen,
+  SignUpScreen,
+  SplashScreen,
+  HomeScreen,
+  HistoryScreen,
+  ExercisesScreen,
   PersonalScreen,
   MuscleGroups,
   Chest,
@@ -37,7 +36,10 @@ import {
   Professional
 } from './src/index';
 
+import GymScreen from './src/screens/GymScreen'
+
 import { AuthContext } from './src/screens/utils';
+import { Alert } from 'react-native';
 
 // import { SearchBar } from './src';
 
@@ -251,21 +253,21 @@ export default function App() {
 
   const authContext = React.useMemo(
     () => ({
-      
+
       signIn: async (data) => {
         // In a production app, we need to send some data (usually username, password) to server and get a token
         // We will also need to handle errors if sign in failed
         // After getting token, we need to persist the token using `SecureStore` or any other encrypted storage
         // In the example, we'll use a dummy token
-        try {
-          console.log(data)
-          User = await client.post('/login', data);
-          userToken = User.data.token
-          // console.log(User.data)
-          dispatch({ type: 'SIGN_IN', token: userToken });
-        } catch (error) {
-          console.log(error.message)
-        }
+        userToken = null
+        await client.post('/login', data)
+          .then((res) => {
+            userToken = res.data.token
+          })
+          .catch((err) => {
+            Alert.alert(err.response.data.error)
+          })
+        dispatch({ type: 'SIGN_IN', token: userToken });
       },
       signOut: () => dispatch({ type: 'SIGN_OUT' }),
       signUp: async (data) => {
@@ -273,13 +275,15 @@ export default function App() {
         // We will also need to handle errors if sign up failed
         // After getting token, we need to persist the token using `SecureStore` or any other encrypted storage
         // In the example, we'll use a dummy token
-        try {
-          User = await client.post('/signup', data);
-          userToken = User.data.token
-          dispatch({ type: 'SIGN_IN', token: userToken });
-        } catch (error) {
-          console.log(error.message)
-        }
+        await client.post('/signup', data)
+          .then((res) => {
+            userToken = res.data.token
+          })
+          .catch((err) => {
+            Alert.alert(err.response.data.error)
+          })
+        dispatch({ type: 'SIGN_IN', token: userToken });
+
       },
     }), []);
   return (
@@ -325,86 +329,86 @@ export default function App() {
               )}
 
               <Stack.Screen
-              name="HistoryScreen"
-              component={HistoryScreen}
-              options={{
-                headerStyle: { backgroundColor: "#2F486D", },
-                headerTintColor: 'white',
-                headerTitle: 'TRAINING HISTORY',
-                headerTitleAlign: 'center',
-              }}
-            />
-            <Stack.Screen
-              name="Exercises"
-              component={Exercises}
-              options={{ headerShown: false }}
-              initialParams={{ userToken: state.userToken }}
-            />
-            <Stack.Screen
-              name="GymScreen"
-              component={GymScreen}
-              options={{
-                headerStyle: { backgroundColor: "#2F486D", },
-                headerTintColor: 'white',
-                headerTitle: 'GYM INFORMATION',
-                headerTitleAlign: 'center',
-              }}
-            />
-            <Stack.Screen
-              name="PersonalScreen"
-              component={PersonalScreen}
-              options={{
-                headerStyle: { backgroundColor: '#2F486D',},
-                headerTintColor: 'white',
-                headerTitle: 'PERSONAL INFORMATION',
-                headerTitleAlign: 'center',
-              }}
-            />
-            <Stack.Screen
-              name="LevelScreen"
-              component={Levels}
-              options={{
-                headerStyle: { backgroundColor: '#2F486D',},
-                headerTintColor: 'white',
-                headerTitle: 'LEVELS OF TRAINING',
-                headerTitleAlign: 'center',
-              }}
-            />
-            <Stack.Screen
-              name="Beginner"
-              component={Beginner}
-              options={{
-                headerStyle: { backgroundColor: '#2F486D',},
-                headerTintColor: 'white',
-                headerTitle: 'BEGINNER PHASE',
-                headerTitleAlign: 'center',
-              }}
-              initialParams={{ userToken: state.userToken }}
-            />
-            <Stack.Screen
-              name="Amateur"
-              component={Amateur}
-              options={{
-                headerStyle: { backgroundColor: '#2F486D',},
-                headerTintColor: 'white',
-                headerTitle: 'BEGINNER PHASE',
-                headerTitleAlign: 'center',
-              }}
-              initialParams={{ userToken: state.userToken }}
-            />
-            <Stack.Screen
-              name="Professional"
-              component={Professional}
-              options={{
-                headerStyle: { backgroundColor: '#2F486D',},
-                headerTintColor: 'white',
-                headerTitle: 'BEGINNER PHASE',
-                headerTitleAlign: 'center',
-              }}
-              initialParams={{ userToken: state.userToken }}
-            />
+                name="HistoryScreen"
+                component={HistoryScreen}
+                options={{
+                  headerStyle: { backgroundColor: "#2F486D", },
+                  headerTintColor: 'white',
+                  headerTitle: 'TRAINING HISTORY',
+                  headerTitleAlign: 'center',
+                }}
+              />
+              <Stack.Screen
+                name="Exercises"
+                component={Exercises}
+                options={{ headerShown: false }}
+                initialParams={{ userToken: state.userToken }}
+              />
+              <Stack.Screen
+                name="GymScreen"
+                component={GymScreen}
+                options={{
+                  headerStyle: { backgroundColor: "#2F486D", },
+                  headerTintColor: 'white',
+                  headerTitle: 'GYM INFORMATION',
+                  headerTitleAlign: 'center',
+                }}
+              />
+              <Stack.Screen
+                name="PersonalScreen"
+                component={PersonalScreen}
+                options={{
+                  headerStyle: { backgroundColor: '#2F486D', },
+                  headerTintColor: 'white',
+                  headerTitle: 'PERSONAL INFORMATION',
+                  headerTitleAlign: 'center',
+                }}
+              />
+              <Stack.Screen
+                name="LevelScreen"
+                component={Levels}
+                options={{
+                  headerStyle: { backgroundColor: '#2F486D', },
+                  headerTintColor: 'white',
+                  headerTitle: 'LEVELS OF TRAINING',
+                  headerTitleAlign: 'center',
+                }}
+              />
+              <Stack.Screen
+                name="Beginner"
+                component={Beginner}
+                options={{
+                  headerStyle: { backgroundColor: '#2F486D', },
+                  headerTintColor: 'white',
+                  headerTitle: 'BEGINNER PHASE',
+                  headerTitleAlign: 'center',
+                }}
+                initialParams={{ userToken: state.userToken }}
+              />
+              <Stack.Screen
+                name="Amateur"
+                component={Amateur}
+                options={{
+                  headerStyle: { backgroundColor: '#2F486D', },
+                  headerTintColor: 'white',
+                  headerTitle: 'BEGINNER PHASE',
+                  headerTitleAlign: 'center',
+                }}
+                initialParams={{ userToken: state.userToken }}
+              />
+              <Stack.Screen
+                name="Professional"
+                component={Professional}
+                options={{
+                  headerStyle: { backgroundColor: '#2F486D', },
+                  headerTintColor: 'white',
+                  headerTitle: 'BEGINNER PHASE',
+                  headerTitleAlign: 'center',
+                }}
+                initialParams={{ userToken: state.userToken }}
+              />
             </Stack.Navigator>
-            <StatusBar/>
+            <StatusBar />
           </NavigationContainer>
         </ThemeProvider>
       </AuthContext.Provider>

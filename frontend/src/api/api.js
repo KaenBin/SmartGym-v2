@@ -44,6 +44,20 @@ const replaceAll = async (token, lst) => {
     }
 }
 
+// const getKey = async (name) => {        
+//     const headers = {
+//         "Content-Type": "application/json",
+//         "X-AIO-Key": "aio_aFzT231CsLw8WGT8AIZWC6T5xcl4"
+//     }
+//     console.log(name)
+//     try {
+//         return await axios.post(`https://io.adafruit.com/api/v2/DangLe1311/feeds/${name}`)
+//             .then((response) => { console.log("hello") })
+//     } catch (error) {
+//         console.log('error while getting key', error)
+//     }
+// }
+
 const postKey = async (name, value) => {        
     const data = {
         "datum": {
@@ -52,7 +66,7 @@ const postKey = async (name, value) => {
     }
     const headers = {
         "Content-Type": "application/json",
-        "X-AIO-Key": "aio_mKcR93jLlECIF13b6cxYovxo08IU"
+        "X-AIO-Key": "aio_aFzT231CsLw8WGT8AIZWC6T5xcl4"
     }
 
     try {
@@ -61,7 +75,7 @@ const postKey = async (name, value) => {
         })
             .then((response) => { return response })
     } catch (error) {
-        console.log('error while getting exercise', error)
+        console.log('error while getting key', error)
     }
 }
 

@@ -13,7 +13,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-export function GymScreen ()  {
+const GymScreen = () =>  {
     const [moisure, setMoisure] = useState('0.0');
     const [temp, setTemp] = useState('0.0');
     const [movement, setMovement] = useState('0');
@@ -26,14 +26,14 @@ export function GymScreen ()  {
     }
 
     const fanHandler = (value) => {
-        result = value + fan
+        result = Number(value) + Number(fan)
         if (result < 0 || result > 3)
             return
         API.postKey("setup-fan", result)
     }
 
     useEffect(() => {
-        setInterval(async () => {
+        const myInterval = setInterval(async () => {
             await axios.get('https://io.adafruit.com/api/v2/DangLe1311/feeds/sensor-moist')
                 .then((response) => {
                     console.log("hi")
@@ -71,6 +71,8 @@ export function GymScreen ()  {
                     console.log(error);
                 });
         }, 5000)
+
+        return () => clearInterval(myInterval)
     }, []);
 
     return (
@@ -191,6 +193,7 @@ export function GymScreen ()  {
     );
 };
 
+export default GymScreen;
 
 const styles = StyleSheet.create({
     container: {

@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import Icon1 from 'react-native-vector-icons/AntDesign'
 import Icon2 from 'react-native-vector-icons/Ionicons';
 
 // import all the components we are going to use
@@ -9,7 +7,6 @@ import {
     StyleSheet,
     View,
     TouchableOpacity,
-    TouchableWithoutFeedback,
     FlatList,
 } from 'react-native';
 
@@ -78,22 +75,9 @@ const styles = StyleSheet.create({
         fontSize: 50,
         margin: 5,
     },
-    startIcon: {
-        color: 'white',
-        fontSize: 40,
-        margin: 10,
-    },
-    trashIcon: {
-        // position: 'absolute',
-        color: '#D9D9D9',
-        fontSize: 50,
-        // marginLeft: '80%',
-    },
     iconContainer: {
-        // backgroundColor: '#D9D9D9',
         alignItems: 'center',
         padding: '2%',
-        // color: 'black',
     },
     addText: {
         color: 'black',
