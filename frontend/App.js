@@ -71,7 +71,7 @@ function Exercises({ route }) {
           headerTintColor: 'white',
           headerTitle: 'CHOOSE THE MUSCLE GROUP',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -82,7 +82,7 @@ function Exercises({ route }) {
           headerTintColor: 'white',
           headerTitle: 'TIME COUNTER',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -92,7 +92,7 @@ function Exercises({ route }) {
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -102,7 +102,7 @@ function Exercises({ route }) {
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -112,7 +112,7 @@ function Exercises({ route }) {
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -122,7 +122,7 @@ function Exercises({ route }) {
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -132,7 +132,7 @@ function Exercises({ route }) {
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -142,7 +142,7 @@ function Exercises({ route }) {
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -152,7 +152,7 @@ function Exercises({ route }) {
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -162,7 +162,7 @@ function Exercises({ route }) {
           headerStyle: { backgroundColor: "#2F486D", },
           headerTintColor: 'white',
           headerTitleAlign: 'center',
-          headerTitleStyle: { fontWeight: '100', fontSize: 20, }
+          headerTitleStyle: { fontWeight: '200', fontSize: 20, }
         }}
       />
       <Stack.Screen
@@ -382,6 +382,7 @@ export default function App() {
                   headerTintColor: 'white',
                   headerTitle: 'BEGINNER PHASE',
                   headerTitleAlign: 'center',
+                  headerTitleStyle: { fontWeight: '200', fontSize: 20, }
                 }}
                 initialParams={{ userToken: state.userToken }}
               />
@@ -391,8 +392,9 @@ export default function App() {
                 options={{
                   headerStyle: { backgroundColor: '#2F486D', },
                   headerTintColor: 'white',
-                  headerTitle: 'BEGINNER PHASE',
+                  headerTitle: 'AMATEUR PHASE',
                   headerTitleAlign: 'center',
+                  headerTitleStyle: { fontWeight: '200', fontSize: 20, }
                 }}
                 initialParams={{ userToken: state.userToken }}
               />
@@ -402,8 +404,9 @@ export default function App() {
                 options={{
                   headerStyle: { backgroundColor: '#2F486D', },
                   headerTintColor: 'white',
-                  headerTitle: 'BEGINNER PHASE',
+                  headerTitle: 'PROFESSIONAL PHASE',
                   headerTitleAlign: 'center',
+                  headerTitleStyle: { fontWeight: '200', fontSize: 20, }
                 }}
                 initialParams={{ userToken: state.userToken }}
               />

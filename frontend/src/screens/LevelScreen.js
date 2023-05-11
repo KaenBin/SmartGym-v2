@@ -16,7 +16,7 @@ export function Levels ({navigation}) {
     <SafeAreaView style={{flex: 1, backgroundColor: '#1C2B41'}}>
         <ScrollView contentContainerStyle={styles.container}>
             <TouchableOpacity 
-                style={styles.groupContainer}
+                style={[styles.groupContainer]}
                 onPress={() => navigation.push('Beginner')}
                 >
                 <Text style={styles.textStyle}>
@@ -59,15 +59,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 40,
-        borderRadius: 20,
-        marginBottom: 40,
+        marginTop: 90,
+        // borderRadius: 20,
+        // marginBottom: 40,
     },
     textStyle: {
         flex: 1,
         color: 'white',
         fontSize: 28,
         textAlign: 'center',
+        marginRight: 50
     },
     container: {
         marginHorizontal: 20,
@@ -77,8 +78,8 @@ const styles = StyleSheet.create({
     imageStyle: {
         position: 'absolute',
         marginLeft: '75%',
-        height: '100%',
-        width: '25%',
-        borderRadius: 20
+        height: '75%',
+        width: '15%',
+        // borderRadius: 20
     },
 });

@@ -72,45 +72,60 @@ export function PersonalScreen({ navigation }) {
 
                 <View style={styles.textbox}>
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Name: 
                         </Text>
-                        <Text style={[styles.textStyle2, {color: '#555555', textAlign: 'right', }]}>
-                            Critiano Ronaldo
-                        </Text>
+                        <TextInput style={styles.textInputStyle}
+                                   underlineColorAndroid="transparent"
+                                   placeholder='Enter name'
+                                   placeholderTextColor='#555555'
+                        >
+                        </TextInput>
                     </View>
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Current level:
                         </Text>
-                        <Text style={[styles.textStyle2, {color: '#555555', textAlign: 'right', }]}>
-                            Pro
-                        </Text>
+                        <TextInput style={styles.textInputStyle}
+                                   underlineColorAndroid="transparent"
+                                   placeholder='Enter level'
+                                   placeholderTextColor='#555555'
+                        >
+                        </TextInput>
                         
                     </View>
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Email: 
                         </Text>
-                        <Text style={[styles.textStyle2, {color: '#555555', textAlign: 'right',}]}>
-                            cristiano@gmail.com
-                        </Text>
+                        <TextInput style={styles.textInputStyle}
+                                   underlineColorAndroid="transparent"
+                                   placeholder='Enter email'
+                                   placeholderTextColor='#555555'
+                                   >
+                        </TextInput>
                     </View>
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Date of Brith:
                         </Text>
-                        <Text style={[styles.textStyle2, {color: '#555555', textAlign: 'right', }]}>
-                            February 5th, 1985
-                        </Text>
+                        <TextInput style={styles.textInputStyle}
+                                   underlineColorAndroid="transparent"
+                                   placeholder='Enter DOB'
+                                   placeholderTextColor='#555555'
+                                   >
+                        </TextInput>
                     </View>
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Address:
                         </Text>
-                        <Text style={[styles.textStyle2, {color: '#555555', textAlign: 'right', }]}>
-                            Funchal, Portugal
-                        </Text>
+                        <TextInput style={styles.textInputStyle}
+                                   underlineColorAndroid="transparent"
+                                   placeholder='Enter address'
+                                   placeholderTextColor='#555555'
+                                >
+                        </TextInput>
                     </View>
                 </View>
                 <Text style={[styles.titleStyle, { alignSelf: 'center' }]}>
@@ -118,15 +133,18 @@ export function PersonalScreen({ navigation }) {
                 </Text>
                 <View style={styles.textbox}>
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Membership ID: 
                         </Text>
-                        <Text style={[styles.textStyle2, {color: '#555555', textAlign: 'right', }]}>
-                            17042023
-                        </Text>
+                        <TextInput style={styles.textInputStyle}
+                                   underlineColorAndroid="transparent"
+                                   placeholder='Auto generated'
+                                   placeholderTextColor='#555555'
+                                   keyboardType='numeric'>
+                        </TextInput>
                     </View>
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Date begin:
                         </Text>
                         
@@ -140,7 +158,7 @@ export function PersonalScreen({ navigation }) {
                         </TextInput>
                     </View>
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Period: 
                         </Text>
                         
@@ -156,7 +174,7 @@ export function PersonalScreen({ navigation }) {
                     </View>
 
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Date expired:
                         </Text>
                         
@@ -168,13 +186,13 @@ export function PersonalScreen({ navigation }) {
                     </View>
 
                     <View style={styles.textRow}>
-                        <Text style={[styles.textStyle2, {color: '#5b92e5'}]}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Tel:
                         </Text>
                         
                         <TextInput style={styles.textInputStyle}
                                    underlineColorAndroid="transparent"
-                                   placeholder='Add numbers'
+                                   placeholder='Enter phone numbers'
                                    placeholderTextColor='#555555'
                                    keyboardType='numeric'>
                         </TextInput>
@@ -241,7 +259,7 @@ const styles = StyleSheet.create({
     },
     textHCMUT: {
         alignSelf: 'center',
-        color: "#1976D2",
+        color: "#2F486D",
     },
     titleStyle: {
         fontSize: 30,

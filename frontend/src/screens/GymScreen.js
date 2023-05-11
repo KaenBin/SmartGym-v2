@@ -150,15 +150,13 @@ const GymScreen = () =>  {
                         </Text>
                     </View>
                 </View>
-                <Text style={styles.textStyle1}>
-                    Users:
-                </Text>
-                <View style={styles.textBox}>
-                    <Text style={styles.titleStyle}>
+                <Text style={styles.titleStyle}>
                         About Gym
                     </Text>
+                <View style={styles.textBox}>
+                    
                     <View style={styles.textRow}>
-                        <Text style={styles.textStyle2}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Company name:
                         </Text>
                         <Text style={[styles.textStyle2, { color: '#555555', textAlign: 'right', }]}>
@@ -166,7 +164,7 @@ const GymScreen = () =>  {
                         </Text>
                     </View>
                     <View style={styles.textRow}>
-                        <Text style={styles.textStyle2}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Address:
                         </Text>
                         <Text style={[styles.textStyle2, { color: '#555555', textAlign: 'right', }]}>
@@ -174,7 +172,7 @@ const GymScreen = () =>  {
                         </Text>
                     </View>
                     <View style={styles.textRow}>
-                        <Text style={styles.textStyle2}>
+                        <Text style={[styles.textStyle2, {color: '#2F486D'}]}>
                             Hotline:
                         </Text>
                         <Text style={[styles.textStyle2, { color: '#555555', textAlign: 'right', }]}>
@@ -211,7 +209,7 @@ const styles = StyleSheet.create({
         // height: '70%',
         width: '90%',
         alignSelf: 'center',
-        backgroundColor: '#AFBCC4',
+        backgroundColor: '#DCDCDC',
         borderColor: 'black',
         borderRadius: 20,
         borderWidth: 2,
@@ -219,7 +217,7 @@ const styles = StyleSheet.create({
     },
     textHCMUT: {
         alignSelf: 'center',
-        color: '#1976D2',
+        color: '#2F486D',
     },
     textRow: {
         flex: 2,
